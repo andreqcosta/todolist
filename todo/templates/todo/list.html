@@ -1,0 +1,26 @@
+{% extends "todo/base.html" %}
+{% block content %}
+<div class="card add-item">
+    <form method="post">
+        {% csrf_token %}
+        {{form.item}}
+        <input type="submit" value="Adicionar item">
+    </form>
+</div>
+
+{% for itemtodo in itemstodo %}
+<form action='{% url "todo:done" itemtodo.id %}' method="post">
+    {% csrf_token %}
+    <div class="card">
+        <div id="item-row">
+            <h3>{{itemtodo.item}}</h3>
+            <form action='{% url "todo:delete" itemtodo.id %}' method="post">
+                {% csrf_token %}
+                <button type="submit" value="{{ itemtodo.done }}">Delete</button>
+            </form>
+        </div>
+        <button id="card-btn" type="submit" value="{{ itemtodo.done }}"></button>
+    </div>
+</form>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-space, .right-space {
+    flex: 1;
+    background: rgb(210, 210, 210);
+}
+
+.content-container {
+    flex: 3;
+    background: rgb(240, 240, 240);
+    padding: 8px;
+}
+
+
+.card {
+    /* outline: 2px solid red; */
+    padding: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background-color: rgb(255,255,255);
+}
+
+#item-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-item {
+    outline: 1px solid black;
+    padding: 8px;
+
+}
+
+* {
+    outline: 2px solid red;
+}
